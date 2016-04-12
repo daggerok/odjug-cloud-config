@@ -1,0 +1,16 @@
+info:
+  component: Netflix Zuul Proxy Server
+server:
+  port: ${PORT:${SERVER_PORT:5432}}
+zuul:
+  ignored-patterns: /config**
+  routes:
+    async:
+      path: /async/**
+      url: http://localhost:4321
+    ping:
+      path: /ping/*
+      url: http://localhost:4321/ping
+    pong:
+      path: /pong/*
+      url: http://localhost:4321/pong

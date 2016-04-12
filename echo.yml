@@ -1,0 +1,4 @@
+info:
+  component: Echo Service
+server:
+  port: ${PORT:${SERVER_PORT:4321}}

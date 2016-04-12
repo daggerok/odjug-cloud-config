@@ -1,0 +1,48 @@
+info:
+  links:
+    - https://github.com/daggerok/odjug-cloud
+    - https://github.com/daggerok/odjug-cloud-config
+server:
+  port: ${PORT:${SERVER_PORT:0}}
+management:
+  contextPath: /admin
+endpoints:
+  health:
+    sensitive: false
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+spring:
+  cloud:
+    config:
+      discovery:
+        enabled: true
+      failFast: true
+eureka:
+  # password: secret
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: ${DISCOVERY_SERVICE_URL:http://${DISCOVERY_SERVICE_HOST:localhost}:${DISCOVERY_SERVICE_PORT:8761}/eureka/}
+  instance:
+    appname: ${spring.application.name}
+    instanceId: ${spring.application.name}-${spring.cloud.client.ipAddress}-${INSTANCE_ID:${random.value}}
+    statusPageUrlPath: ${management.contextPath}/info
+    healthCheckUrlPath: ${management.contextPath}/health
+    preferIpAddress: true
+logging:
+  level:
+    com.netflix.discovery: 'OFF'
+ribbon:
+  ServerListRefreshInterval: 1000
+  ConnectTimeout: 3000
+  ReadTimeout: 60000
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000

@@ -1,0 +1,4 @@
+info:
+  component: Rest Server (feign origin)
+server:
+  port: ${PORT:${SERVER_PORT:0}}

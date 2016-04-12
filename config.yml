@@ -1,0 +1,4 @@
+info:
+  component: Cloud Config Server
+server:
+  port: ${PORT:${SERVER_PORT:8888}}
