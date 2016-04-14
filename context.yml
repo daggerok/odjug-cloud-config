@@ -1,0 +1,13 @@
+info.component: Refresh Scope / Restart Application Context
+
+props:
+  name: props
+  items:
+    - one
+    - two
+    - three
+    - four
+    - five
+    - six
+# server:
+#   port: 5555

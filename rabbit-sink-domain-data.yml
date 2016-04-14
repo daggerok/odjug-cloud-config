@@ -1,0 +1,21 @@
+info.component: RabbitMQ (amqp) Spring Cloud Stream Data Consumer
+
+management.health.binders.enabled: true
+
+# http://docs.spring.io/spring-cloud-stream/docs/1.0.0.RC1/reference/htmlsingle/index.html#_kafka_binder_properties
+spring:
+  datasource.url: jdbc:h2:file:./.h2.rabbit.db;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+  jpa.hibernate.ddl-auto: update
+  data.rest.base-path: /api
+  rabbitmq:
+    host: ${DOCKER_HOST:192.168.99.100}
+    addresses: ${DOCKER_HOST:192.168.99.100}:5672
+  cloud:
+    stream:
+      rabbit.binder.addresses: ${DOCKER_HOST:192.168.99.100}:5672
+      bindings.input:
+        group: messages
+        destination: messages
+        durableSubscription: true
+
+  zipkin.baseUrl: ${ZIPKIN_URL:http://${ZIPKIN_HOST:${DOCKER_HOST:192.168.99.100}}:${ZIPKIN_PORT:9411}}

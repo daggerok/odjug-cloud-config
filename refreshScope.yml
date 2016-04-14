@@ -1,9 +1,0 @@
-info:
-  component: Refresh Scope
-
-props:
-  name: props
-  items:
-    - one
-    - two
-    - three

@@ -1,0 +1,7 @@
+info.component: Netflix Hystrix Dashboard Monitor
+
+eureka.instance.homePageUrl: ${management.contextPath}/hystrix/
+
+spring.rabbitmq:
+  host: ${DOCKER_HOST:192.168.99.100}
+  addresses: ${DOCKER_HOST:192.168.99.100}:5672

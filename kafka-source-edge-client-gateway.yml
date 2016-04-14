@@ -1,0 +1,16 @@
+info.component: Kafka Enge Client
+
+server.port: ${PORT:${SERVER_PORT:8000}}
+
+# http://docs.spring.io/spring-cloud-stream/docs/1.0.0.RC1/reference/htmlsingle/index.html#_kafka_binder_properties
+spring.cloud.stream:
+  kafka.binder:
+    # brokers: 192.168.1.1,192.168.1.2:9999,192.168.1.3:9999
+    # defaultBrokerPort: 9102
+    brokers: ${DOCKER_HOST:192.168.99.100}
+    # zkNodes: 192.168.2.1,192.168.2.2:2221,192.168.2.3:2222
+    # defaultZkPort: 2181
+    zkNodes: ${DOCKER_HOST:192.168.99.100}
+  bindings.output.destination: messages
+
+  zipkin.baseUrl: ${ZIPKIN_URL:http://${ZIPKIN_HOST:${DOCKER_HOST:192.168.99.100}}:${ZIPKIN_PORT:9411}}

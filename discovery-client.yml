@@ -1,0 +1,3 @@
+info.component: Discovery Client Side Load Balancer
+
+server.port: ${PORT:${SERVER_PORT:0}}

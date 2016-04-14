@@ -1,4 +1,0 @@
-info:
-  component: Feign Declarative REST Client
-server:
-  port: ${PORT:${SERVER_PORT:0}}

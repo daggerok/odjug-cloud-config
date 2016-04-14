@@ -1,5 +1,3 @@
-info:
-  component: Netflix Hystrix Dashboard
-eureka:
-  instance:
-    homePageUrl: ${management.contextPath}/hystrix/
+info.component: Netflix Hystrix Fallback Command
+
+eureka.instance.homePageUrl: ${management.contextPath}/hystrix/

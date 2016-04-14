@@ -1,7 +1,7 @@
-info:
-  component: Service Discovery Server
-server:
-  port: ${PORT:${SERVER_PORT:8761}}
+info.component: Service Discovery Server
+
+server.port: ${PORT:${SERVER_PORT:8761}}
+
 eureka:
   server:
     registry-sync-retry-wait-ms: 500
@@ -13,11 +13,7 @@ eureka:
     register-with-eureka: false
     fetch-registry: false
   # https://groups.google.com/forum/#!msg/eureka_netflix/24FLU_q7d0I/VXK6cEYdsGwJ
-  refresh:
-    interval: 1
+  refresh.interval: 1
   appInfo:
-    replace:
-      interval: 1
-    initial:
-      replace:
-        time: 2
+    replace.interval: 1
+    initial.replace.time: 2

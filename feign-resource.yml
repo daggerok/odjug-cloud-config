@@ -1,0 +1,3 @@
+info.component: Feign Origin Rest Resource
+
+server.port: ${PORT:${SERVER_PORT:0}}

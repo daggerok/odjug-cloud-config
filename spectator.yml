@@ -1,0 +1,5 @@
+info.component: Spectator Tag Driven Dimension API
+
+server.port: ${PORT:${SERVER_PORT:7999}}
+
+eureka.instance.homePageUrl: ${management.contextPath}/hystrix/

@@ -1,7 +1,7 @@
-info:
-  component: Netflix Zuul Proxy Server
-server:
-  port: ${PORT:${SERVER_PORT:5432}}
+info.component: Netflix Zuul Proxy Server
+
+server.port: ${PORT:${SERVER_PORT:5432}}
+
 zuul:
   ignored-patterns: /config**
   routes:
