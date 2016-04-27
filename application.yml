@@ -1,6 +1,11 @@
-info.links:
-  - https://github.com/daggerok/odjug-cloud
-  - https://github.com/daggerok/odjug-cloud-config
+info:
+  group: @project.groupId@
+  artifact: @project.artifactId@
+  name: @project.name@
+  version: @project.version@
+  links:
+    - https://github.com/daggerok/odjug-cloud
+    - https://github.com/daggerok/odjug-cloud-config
 
 server.port: ${PORT:${SERVER_PORT:0}}
 
